@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HTML5, CSS3, JavaScript의 기초를 한 페이지에서 살펴보는 학습용 데모">
+  <title>웹 기초 실습실</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --background: #f4f7fb;
+      --surface: #ffffff;
+      --text: #172033;
+      --muted: #64748b;
+      --primary: #536dfe;
+      --primary-dark: #4055d6;
+      --border: #e2e8f0;
+      --code: #eef2ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    .page {
+      width: min(100% - 32px, 960px);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 56px 0 36px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    h1,
+    h2,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      line-height: 1.2;
+    }
+
+    header p:last-child {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    main {
+      display: grid;
+      gap: 20px;
+      padding-bottom: 40px;
+    }
+
+    .card {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--surface);
+      box-shadow: 0 8px 24px rgb(23 32 51 / 5%);
+    }
+
+    .card h2 {
+      margin-bottom: 8px;
+      font-size: 1.3rem;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .tag {
+      display: inline-block;
+      margin-right: 6px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--code);
+      color: var(--primary-dark);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .demo-box {
+      margin-top: 16px;
+      padding: 18px;
+      border: 2px dashed #c7d2fe;
+      border-radius: 12px;
+      background: #f8faff;
+      text-align: center;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    button {
+      min-height: 44px;
+      padding: 9px 16px;
+      border: 0;
+      border-radius: 10px;
+      background: var(--primary);
+      color: #fff;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: var(--primary-dark);
+    }
+
+    button:focus-visible {
+      outline: 3px solid #a5b4fc;
+      outline-offset: 3px;
+    }
+
+    button.secondary {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    code {
+      padding: 2px 6px;
+      border-radius: 5px;
+      background: var(--code);
+      color: #3730a3;
+      font-family: Consolas, "Courier New", monospace;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 0;
+      padding-left: 22px;
+    }
+
+    footer {
+      padding: 0 0 28px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    body.dark {
+      color-scheme: dark;
+      --background: #111827;
+      --surface: #1f2937;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --border: #374151;
+      --code: #312e81;
+    }
+
+    body.dark .demo-box {
+      border-color: #4f46e5;
+      background: #273449;
+    }
+
+    body.dark code,
+    body.dark .tag {
+      color: #e0e7ff;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding-top: 40px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <p class="eyebrow">MY FIRST WEB PAGE</p>
+      <h1>웹 기초 실습실</h1>
+      <p>HTML로 구조를 만들고, CSS로 꾸미고, JavaScript로 움직여 보세요.</p>
+    </header>
+
+    <main>
+      <section class="card" aria-labelledby="html-title">
+        <span class="tag">HTML5</span>
+        <h2 id="html-title">1. 콘텐츠의 구조 만들기</h2>
+        <p class="muted">HTML은 웹페이지의 제목, 문단, 버튼처럼 콘텐츠의 역할과 구조를 표현합니다.</p>
+        <div class="demo-box">
+          <strong>이 영역은 HTML 요소로 구성되어 있어요.</strong>
+          <p>아래 버튼도 의미가 분명한 <code>&lt;button&gt;</code> 요소입니다.</p>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="css-title">
+        <span class="tag">CSS3</span>
+        <h2 id="css-title">2. 색상과 레이아웃 꾸미기</h2>
+        <p class="muted">CSS는 HTML 요소의 색상, 간격, 크기, 배치를 정합니다. 이 페이지는 작은 화면에서도 보기 좋도록 반응형으로 구성되어 있습니다.</p>
+        <div class="demo-box">
+          이 상자의 테두리, 여백, 배경색은 CSS로 지정했어요.
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="js-title">
+        <span class="tag">JavaScript</span>
+        <h2 id="js-title">3. 페이지에 동작 추가하기</h2>
+        <p class="muted">JavaScript는 버튼 클릭 같은 이벤트에 반응해 페이지를 바꿀 수 있습니다.</p>
+        <div class="demo-box">
+          <p id="counter" aria-live="polite">버튼을 누른 횟수: 0</p>
+          <div class="button-row">
+            <button id="count-button" type="button">횟수 올리기</button>
+            <button id="theme-button" class="secondary" type="button" aria-pressed="false">다크 모드 켜기</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="practice-title">
+        <h2 id="practice-title">오늘의 학습 체크</h2>
+        <ul class="checklist">
+          <li><strong>HTML:</strong> <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>의 역할 살펴보기</li>
+          <li><strong>CSS:</strong> <code>.card</code>나 색상 변수를 바꿔 페이지 꾸며보기</li>
+          <li><strong>JavaScript:</strong> 아래 코드에서 클릭 이벤트가 어떻게 동작하는지 확인하기</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>파일 하나로 만든 HTML5 + CSS3 + JavaScript 데모</footer>
+  </div>
+
+  <script>
+    const counterText = document.querySelector("#counter");
+    const countButton = document.querySelector("#count-button");
+    const themeButton = document.querySelector("#theme-button");
+    let count = 0;
+
+    countButton.addEventListener("click", () => {
+      count += 1;
+      counterText.textContent = `버튼을 누른 횟수: ${count}`;
+    });
+
+    themeButton.addEventListener("click", () => {
+      const isDark = document.body.classList.toggle("dark");
+      themeButton.textContent = isDark ? "라이트 모드 켜기" : "다크 모드 켜기";
+      themeButton.setAttribute("aria-pressed", String(isDark));
+    });
+  </script>
+</body>
+</html>

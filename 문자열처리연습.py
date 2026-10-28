@@ -20,7 +20,7 @@ print(strB[-1])
 print(strB[-3:])
 
 #특수문자 표기:\
-print("c:\work\test.txt")
+#print("c:\work\test.txt")
 print("c:\\work\\test.txt")
 
 #raw string notation: 소문자 r을 붙여서 사용
