@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f7fb">
+    <meta
+      name="description"
+      content="오늘 해야 할 일을 간단하게 기록하고 관리하세요."
+    >
+    <title>오늘의 할 일</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="page-header">
+        <a class="brand" href="./" aria-label="오늘의 할 일 홈">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="m6.5 12.5 3.7 3.7 7.8-8.1" />
+              <path d="M20 12a8 8 0 1 1-4.1-7" />
+            </svg>
+          </span>
+          <span>daylist</span>
+        </a>
+        <span class="header-note">작은 계획이 만드는 좋은 하루</span>
+      </header>
+
+      <section class="todo-card" aria-labelledby="page-title">
+        <div class="intro">
+          <p class="eyebrow">MY DAILY LIST</p>
+          <h1 id="page-title">오늘의 할 일</h1>
+          <p class="intro-copy">하나씩 완료하며 오늘을 채워보세요.</p>
+        </div>
+
+        <form class="todo-form" id="todo-form">
+          <label class="sr-only" for="todo-input">새 할 일</label>
+          <input
+            id="todo-input"
+            name="todo"
+            type="text"
+            maxlength="200"
+            placeholder="새로운 할 일을 입력하세요"
+            autocomplete="off"
+            required
+          >
+          <button class="add-button" type="submit">
+            <span aria-hidden="true">+</span>
+            <span>추가하기</span>
+          </button>
+        </form>
+
+        <p class="notice" id="storage-notice" role="status" aria-live="polite" hidden></p>
+
+        <div class="list-toolbar">
+          <div class="list-heading">
+            <h2>내 목록</h2>
+            <span class="task-count" id="task-count" aria-label="할 일 개수">0</span>
+          </div>
+          <div class="filters" role="group" aria-label="할 일 필터">
+            <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">
+              전체
+            </button>
+            <button class="filter-button" type="button" data-filter="active" aria-pressed="false">
+              진행 중
+            </button>
+            <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">
+              완료
+            </button>
+          </div>
+        </div>
+
+        <ul class="todo-list" id="todo-list" aria-label="할 일 목록"></ul>
+        <div class="empty-state" id="empty-state">
+          <span class="empty-icon" aria-hidden="true">✦</span>
+          <p class="empty-title">아직 할 일이 없어요</p>
+          <p class="empty-copy">새로운 할 일을 추가해 보세요.</p>
+        </div>
+        <p class="sr-only" id="list-announcement" role="status" aria-live="polite"></p>
+
+        <footer class="card-footer">
+          <span class="footer-dot" aria-hidden="true"></span>
+          <span>할 일은 이 브라우저에 안전하게 저장됩니다.</span>
+        </footer>
+      </section>
+
+      <p class="page-footer">나만의 속도로, 차근차근.</p>
+    </main>
+  </body>
+</html>
